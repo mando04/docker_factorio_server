@@ -10,14 +10,14 @@ echo '  \  \::/     \  \::/       \  \:\  /:/  \__\/  \:\   \  \:\  /:/   \  \::
 echo '   \  \:\      \  \:\        \  \:\/:/        \  \:\   \  \:\/:/     \  \:\          /__/:/    \  \:\/:/  '
 echo '    \  \:\      \  \:\        \  \::/          \__\/    \  \::/       \  \:\         \__\/      \  \::/   '
 echo '     \__\/       \__\/         \__\/                     \__\/         \__\/                     \__\/    '
-# Checking if server is ready 
-if [ $FACTORIO_WAITING == true ] 
-then 
-  until [ -f /opt/factorio/saves/ready ] 
-  do 
-    echo "# Waiting for backup daemon to be ready" 
-    sleep 1 
-  done 
+# Checking if server is ready
+if [ $FACTORIO_WAITING == true ]
+then
+  until [ -f /opt/factorio/saves/ready ]
+  do
+    echo "# Waiting for backup daemon to be ready"
+    sleep 1
+  done
 fi
 # Setting initial command
 factorio_command="/opt/factorio/bin/x64/factorio"
@@ -114,14 +114,14 @@ then
 factorio_command="$factorio_command --complete"
 fi
 # Setting allow-commands option
-factorio_command="$factorio_command --allow-commands $FACTORIO_ALLOW_COMMANDS"
+#factorio_command="$factorio_command --allow-commands $FACTORIO_ALLOW_COMMANDS"
 # Setting auto-pause option
-if [ "$FACTORIO_NO_AUTO_PAUSE" == true ] 
+if [ "$FACTORIO_NO_AUTO_PAUSE" == true ]
 then
 factorio_command="$factorio_command --no-auto-pause"
 fi
 # Setting latency-ms option
-factorio_command="$factorio_command --latency-ms $FACTORIO_LATENCY_MS"
+# factorio_command="$factorio_command --latency-ms $FACTORIO_LATENCY_MS"
 # Setting autosave-interval option
 factorio_command="$factorio_command --autosave-interval $FACTORIO_AUTOSAVE_INTERVAL"
 # Setting autosave-slots option
